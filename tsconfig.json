@@ -18,8 +18,21 @@
         "name": "next"
       }
     ],
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./src/*"],
+      "@app/*": ["./src/app/*"],
+      "@providers/*": ["./src/app/providers/*"],
+      "@routes/*": ["./src/routes/*"],
+      "@entities/*": ["./src/entities/*"],
+      "@features/*": ["./src/features/*"],
+      "@widgets/*": ["./src/widgets/*"],
+
+      "@shared/*": ["./src/shared/*"],
+      "@config/*": ["./src/shared/config/*"],
+      "@api/*": ["./src/shared/api/*"],
+      "@lib/*": ["./src/shared/lib/*"],
+      "@utils/*": ["./src/shared/utils/*"],
     }
   },
   "include": [
