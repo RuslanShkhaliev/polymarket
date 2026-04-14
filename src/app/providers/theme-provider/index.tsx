@@ -17,19 +17,27 @@ export const ThemeProvider = ({
 	children,
 	defaultDarkMode = true,
 }: ThemeProviderType) => {
-	const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
-		const savedMode = localStorage.getItem(THEME_STORAGE_KEY);
-		return savedMode ? JSON.parse(savedMode) : defaultDarkMode;
-	});
+	const [isDarkMode, setIsDarkMode] = useState<boolean>(defaultDarkMode);
+	const [isMounted, setIsMounted] = useState<boolean>(false);
 
 	useEffect(() => {
+		const savedMode = localStorage.getItem(THEME_STORAGE_KEY);
+		if (savedMode) {
+			setIsDarkMode(JSON.parse(savedMode));
+		}
+		setIsMounted(true);
+	}, []);
+
+	useEffect(() => {
+		if (!isMounted) return;
+
 		localStorage.setItem(THEME_STORAGE_KEY, JSON.stringify(isDarkMode));
 		if (isDarkMode) {
 			document.documentElement.classList.add('dark');
 		} else {
 			document.documentElement.classList.remove('dark');
 		}
-	}, [isDarkMode]);
+	}, [isDarkMode, isMounted]);
 
 	const toggleDarkMode = useCallback(() => {
 		setIsDarkMode((prev) => !prev);
