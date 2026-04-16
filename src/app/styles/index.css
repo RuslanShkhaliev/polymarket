@@ -627,11 +627,65 @@
 
 
 @layer base {
+  * {
+    border-color: var(--color-border);
+  }
   body {
     background-color: var(--color-background);
     --lightningcss-light: initial;
     --lightningcss-dark: ;
     color-scheme: light dark;
     color: var(--color-text);
+    overflow-x: hidden;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }
+
+@theme {
+  --color-text: var(--color-text);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-brand: var(--color-text-brand);
+  --color-text-brand-hover: var(--color-text-brand-hover);
+  --color-button-link-text: var(--color-button-link-text);
+  --color-button-link-text-hover: var(--color-button-link-text-hover);
+
+  --color-text-button-primary-text: var(--color-button-primary-text);
+  --color-button-primary-bg: var(--color-button-primary-bg);
+  --color-button-primary-bg-hover: var(--color-button-primary-bg-hover);
+  --color-button-ghost-bg: var(--color-button-ghost-bg);
+  --color-button-ghost-bg-hover: var(--color-button-ghost-bg-hover);
+
+
+  --color-input-filled-bg: var(--color-input-filled-bg);
+
+  --color-border: var(--color-border);
+  --color-background: var(--color-background);
+}
+
+@utility text-body-base {
+  font-family: var(--font-inter, "Inter"), sans-serif;
+  letter-spacing: -0.09px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@layer utilities {
+  .text-body-base {
+    font-family: var(--font-inter, "Inter"), sans-serif;
+    letter-spacing: -0.09px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .text-heading-xl {
+    font-family: var(--font-inter, "Inter"), sans-serif;
+    letter-spacing: -.01em;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+  }
+}
+
