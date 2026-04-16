@@ -1,4 +1,5 @@
 'use client';
+import { routes } from '@config/routes.config';
 import { Button } from '@shared/ui/button';
 import { InputSearch } from '@shared/ui/input-search';
 import {
@@ -29,8 +30,8 @@ const NavbarSearch = () => {
 };
 export const NavbarWidget = () => {
 	const links = [
-		{ label: 'Politics', href: '/politics' },
-		{ label: 'Crypto', href: '/crypto' },
+		{ label: 'Politics', href: routes.category('politics') },
+		{ label: 'Crypto', href: routes.category('crypto') },
 	];
 	return (
 		<Navbar>

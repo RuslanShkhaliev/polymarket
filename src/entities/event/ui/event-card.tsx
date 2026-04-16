@@ -1,3 +1,4 @@
+import { routes } from '@config/routes.config';
 import { PredictionEvent } from '@entities/event';
 import { ButtonOutcome } from '@entities/event/ui/button-outcome';
 import { VolumeAmount } from '@shared/ui/volume';
@@ -96,7 +97,7 @@ export const EventCard = memo(({ data }: EventCardProps) => {
 						<Link
 							key={index}
 							className={'w-full'}
-							href={`/event/${data.slug}?outcomeIndex=${index}`}
+							href={routes.event(data.slug)}
 						>
 							<ButtonOutcome
 								variant={index === 0 ? 'green' : 'red'}

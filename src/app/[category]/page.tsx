@@ -1,7 +1,7 @@
 import { getEventsQueryOptions } from '@entities/event';
 import { Category } from '@entities/event/model/schema';
 import { getQueryClient, ReactQueryHydrate } from '@lib/react-query';
-import { CategoryRoute } from '@routes/category';
+import { EventsPage } from '@routes/events';
 
 interface Props {
 	params: Promise<{ category: Category }>;
@@ -15,7 +15,7 @@ export default async function CategoryPage({ params }: Props) {
 	await queryClient.prefetchQuery(getEventsQueryOptions(category));
 	return (
 		<ReactQueryHydrate state={queryClient}>
-			<CategoryRoute category={category} />
+			<EventsPage category={category} />
 		</ReactQueryHydrate>
 	);
 }

@@ -10,7 +10,7 @@ interface OutcomeRowProps {
 
 export const OutcomeRow = ({ data }: OutcomeRowProps) => {
 	return (
-		<div className='hover:bg-neutral-50/50 flex items-center justify-between py-3 [&+&]:border-t [&+&]:border-border'>
+		<div className='flex items-center justify-between py-3 [&+&]:border-t [&+&]:border-border'>
 			<div className='flex flex-3 gap-4 min-w-[180px]'>
 				<Avatar src={data.image} />
 

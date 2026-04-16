@@ -1,3 +1,4 @@
+import { routes } from '@config/routes.config';
 import Link from 'next/link';
 import React, { PropsWithChildren } from 'react';
 
@@ -24,7 +25,7 @@ export const NavbarInner: React.FC<{ children: React.ReactNode }> = ({
 export const NavbarLogo: React.FC = () => {
 	return (
 		<a
-			href='/'
+			href={routes.home}
 			className='w-fit shrink-0 h-10 flex items-center'
 		>
 			<svg

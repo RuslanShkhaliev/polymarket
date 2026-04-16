@@ -171,3 +171,18 @@ Polymarket — prediction market:
 - Real-time без полного ререндера
 - Jotai + атомарный state
 - Минимально достаточная функциональность
+
+---
+
+## 4. Хук WebSocket-подписки
+
+Самый практичный вариант — сделать один хук, который:
+
+- открывает WS
+- подписывается на нужные market ids
+- на `message` пушит апдейты в jotai
+- переподключается при разрыве
+
+Пример:
+
+<llm-snippet-file>src/features/markets/api/useMarketsRealtime.ts</llm-snippet-file>

@@ -1,8 +1,5 @@
-import { Category } from '@entities/event/model/schema';
-
 export const routes = {
 	home: '/',
-	events: '/events',
-	eventsByCategory: (category: Category) => `/events/${category}`,
+	category: (category: string) => `/${category}`,
 	event: (slug: string) => `/events/${slug}`,
 };

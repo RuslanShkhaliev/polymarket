@@ -44,7 +44,7 @@ export const EventDetails = ({ slug }: { slug: string }) => {
 			<div className={'sticky top-0 z-10'}>
 				<EventMetaBar volume={data.volume} />
 			</div>
-			<div className='space-y-2 border-t border-border'>
+			<div className='border-t border-border'>
 				{data.markets.map((market, index) => (
 					<OutcomeRow
 						key={index}
